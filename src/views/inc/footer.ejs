@@ -1,0 +1,17 @@
+<footer>
+    <p> &copy; Techblog todos os direitos reservados</p>
+</footer>
+
+    <% if (isLogged) { %>
+        <script src="/scripts/profileOptions.js"></script>
+    <% } %>
+    <% if (/admin/gi.test(css)) { %>
+        <script src="/scripts/admin.js"></script>
+    <% } %>
+    <script src="/scripts/scripts.js"></script>
+
+    <script>
+        const socket = io();
+    </script>
+</body>
+</html>

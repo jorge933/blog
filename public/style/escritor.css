@@ -1,0 +1,28 @@
+@import url(./inc/forms.css);
+
+main {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ text-align: center;
+}
+
+main section.header-main {
+ height: 15vh;
+ font: 1.5rem "Fira_bold";
+}
+
+main section.main {
+ height: 35vh;
+}
+
+main section.main, main section.main form {
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+}
+
+main section.main p.reason-textp {
+ margin: 5rem 0;
+ font: 1.5rem "Poppins_sem-bold";
+}

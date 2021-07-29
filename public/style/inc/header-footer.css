@@ -1,0 +1,159 @@
+header {
+ width: 100vw;
+ height: 10vh;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+}
+
+header section.left {
+ margin-left: 10rem;
+ display: flex;
+ align-items: center;
+}
+
+header section.left div.logo .logo-text {
+ font: 2rem "Poppins_med", sans-serif;
+ text-transform: uppercase;
+ color: rgb(12, 10, 10);
+ padding-right: 2rem;
+}
+
+header section.left div.menu ul {
+ display: flex;
+ align-items: center;
+}
+
+header section.left div.menu ul li {
+ margin-left: 1rem;
+}
+
+header section.left div.menu ul li a {
+ font: 1.5rem "Poppins_med", sans-serif;
+ color: #202020;
+}
+
+header section.left div.menu ul li a:hover {
+ opacity: .7;
+}
+
+header section.search {
+ width: 40rem;
+ margin-right: 7.5rem;
+ display: flex;
+ align-items: center;
+}
+
+header section.search form { padding-right: 4rem }
+
+
+header section.search form input {
+ padding: .5rem 1rem;
+ border-radius: 5px;
+ border: #000000b0 solid 2px;
+}
+
+header section.search form div.input-focus {
+ position: absolute;
+ height: 1px;
+ width : 1px;
+ padding: 0;
+ margin: -5rem;
+ overflow: hidden;
+ clip-path: rect(0, 0, 0, 0);
+ white-space: nowrap;
+ border-width: 0;
+ transition: .5s ease;
+ transition-property: height;
+}
+
+header section.search form div.input-focus.active {
+ transition-property: width height;
+ position: absolute;
+ width: 11.7vw;
+ height: 20vh;
+ left: 68.6%;
+ top: 15%;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ padding: 2.5rem 2rem;
+ border-radius: 0 0 5px 5px;
+ background-color: #eee;
+}
+
+header section.search form div.input-focus.active button {
+ margin: 1rem 0;
+ padding: .5rem;
+ background-color: #e7e3e3;
+ border: none;
+ border-radius: 5px;
+ cursor: pointer;
+ font: 1.2rem 'Poppins_med';
+}
+
+header section.search div.profile {
+ display: flex;
+ align-items: center;
+ width: 15rem;
+}
+
+header section.search div.profile img { clip-path: circle(); border-radius: 50%; }
+
+header section.search div.profile span {
+ margin-left: 1rem;
+ font: 1.5rem "Poppins_med";
+}
+
+header section.search div.profile div.profile-options {
+ display: none;
+}
+
+@keyframes height-transition {
+    from {
+        height: 0;
+    }
+    to {
+        height: 7rem;
+    }
+}
+
+header section.search div.profile div.profile-options.active {
+ display: unset;
+ position: absolute;
+ right: 9%;
+ top: 7%;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ animation: height-transition .5s;
+ height: 7rem
+}
+
+header section.search div.profile div.profile-options.active * {
+ overflow: hidden;
+}
+
+header section.search div.profile div.profile-options.active a {
+ font: 1.5rem sans-serif;
+ color: #000;
+}
+
+header section.search a.login {
+ font-size: 2rem;
+ color: #000;
+ font: 1.5rem "Poppins_sem-bold";
+}
+
+footer {
+ margin-top: 15rem;
+ background-color: #202020;
+ padding: 2rem 0;
+ text-align: center;
+}
+
+footer p {
+ color: #fff;
+ font: 1.5rem "Poppins_med";
+}

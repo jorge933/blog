@@ -1,0 +1,9 @@
+@import './inc/adminInclude.css';
+
+body main {
+ display: flex;
+}
+
+footer {
+ margin: 0;
+}

@@ -1,0 +1,41 @@
+<%- include('../inc/header') %>
+
+    <main>
+        <%- include('./inc/menu') %>
+
+            <section class="main">
+                <% if (level===3) { %>
+                    <div class="new-admin">
+                        <button>Novo administrador</button>
+                        <button class="new-topic-button">Novo tópico</button>
+                        <button class="delete-topic">Excluir tópico</button>
+                    </div>
+                    <% } %>
+            </section>
+
+            <section class="modal-delete">
+                <div class="delete-content">
+                    <input type="hidden" style="clip: rect(0, 0, 0, 0); position: absolute; left: -10rem;" class="lang-click">
+                    <button class="cancel-delete" type="button">Cancelar</button>
+
+                    <div class="lang-container">
+                        <span class="lang">Dart</span>
+                        <button>Excluir</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="new-topic">
+                <form action="/new-post">
+                    <input type="text" name="topic" id="" class="input" placeholder="Nome do tópico">
+                    <input type="submit">
+                </form>
+
+                <button class="cancel-newTopic">Cancelar</button>
+            </section>
+
+    </main>
+
+    <script src="/scripts/manage-topics.js"></script>
+    <%- include('./inc/modal') %>
+    <%- include('../inc/footer') %>

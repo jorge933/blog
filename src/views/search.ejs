@@ -1,0 +1,15 @@
+<%- include('./inc/header') %>
+
+    <main>
+        <section class="main-header">
+            <p class="result">Resultados da busca por: <span class="query">
+                    <%= query %>
+                </span></p>
+        </section>
+
+        <section class="posts">
+            <%- include('./inc/postsContainer') %> 
+        </section>
+    </main>
+
+    <%- include('./inc/footer') %>

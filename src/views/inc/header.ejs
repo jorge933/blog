@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        
+        ga('create', '18-07-2021', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TK3P85F');</script>
+
+    <script async defer src="https://www.google-analytics.com/analytics.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="9YrTpm7DOhdHPDHNBj-53iJFIGlf1piYOoCNERNk5b8" />
+    <meta name="description" content="Site de um blog sobre programação artigos e muitas coisas, gostamos de se ajudar, a lembre-se amor entre nós é tudo respeito">
+    <meta name="keywords" content="programação, programation, javascript, js, es6, es8, es7, es9, es5, php, assembly, como programar, iniciantes programação, noob programation, noob, developers, developer, devs">
+    <meta name="author" content="Jorgin">
+    <meta name="robots" content="<% css %>">
+
+    <link rel="stylesheet" href="/style/global.css" type="text/css">
+    <link rel="stylesheet" href="/style/inc/header-footer.css" type="text/css">
+    <link rel="stylesheet" href="/style/<%= css %>.css" type="text/css">
+    <% if (css === 'posts' || css === 'search') { %>
+        <link rel="stylesheet" href="/style/inc/postContainer.css">
+    <% } %>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.3/socket.io.js" integrity="sha512-PU5S6BA03fRv1Q5fpwXjg5nlRrgdoguZ74urFInkbABMCENyx5oP3hrDzYMMPh3qdLdknIvrGj3yqZ4JuU7Nag==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <% if (css === 'manage-topic-admin') { %>
+        <style>
+            footer { margin-top: .4rem; }
+        </style>
+    <% } %>
+    <title> <%= title %>  | Blog</title>
+</head>
+
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TK3P85F"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <header class="header">
+        <section class="left">
+            <div class="logo"> <a href="/"> <h2 class="logo-text">techblog</h2> </a> </div>
+            <div class="menu">
+                <ul>
+                    <li> <a href="/">Home</a> </li>
+                    <li> <a href="/posts">Posts</a> </li>
+                    <% if (isLogged === true) { %>
+                         <% if (writer) { %>
+                            <li> <a href="/posts/novo-post">Criar novo post</a> </li>
+                        <% } else { %>
+                            <li> <a href="/ser-um-escritor">Ser um escritor</a> </li>
+                        <% } %> 
+
+                        <% if (admin) { %>
+                            <li> <a href="/admin">Administração</a> </li>
+                        <% } %>
+                    <% } %>
+                </ul>
+            </div>
+        </section>
+
+        <section class="search">
+            <form class="form" action="/search=" method="GET" autocomplete="off">
+                <% if (css !== 'search') { %>
+                    <input type="text" placeholder="Pesquisar" name="q">
+
+                    <div class="input-focus">
+                        <input type="hidden" value="all" name="filter">
+                        <button type="button" class="author">Pesquisar via autor</button>
+                        <button type="button" class="title">Pesquisar via titulo</button>
+                        <button type="button" class="content">Pesquisar por conteudo do post</button>
+                        <button type="button" class="tags">Pesquisar tags</button>
+                    </div>
+                <% } else { %>
+                    <input type="text" placeholder="Pesquisar" name="q" value="<%= query %>">
+                <% } %> 
+
+                
+            </form>
+
+            <% if (isLogged === true) { %>
+                <%-  include('profile') %>
+             <% } else { %>
+                <a href="/auth/google" class="login">Logar</a>
+             <% } %>
+        </section>
+    </header>

@@ -1,0 +1,52 @@
+body {
+ overflow-x: hidden;
+}
+
+main section.profile-infos div.photo img {
+ clip-path: circle();
+}
+main section.profile-infos {
+ display: flex;
+ align-items: center;
+ margin-left: 4rem;
+}
+main section.profile-infos div.div-name {
+ display: flex;
+ flex-direction: column;
+ margin-left: 2rem;
+}
+
+main section.profile-infos div.div-name span.name {
+ font: 1.7rem "Poppins_med";
+}
+
+main section.profile-infos div.div-name span.lang {
+ font: 1.3rem "Fira_reg";
+} 
+
+main section.profile-infos div.div-name span.created-at {
+ font: 1.5rem "Poppins_med";
+ color: rgb(138, 138, 138);
+}
+
+main section.post {
+ text-align: center;
+ line-height: 1.3rem;
+ letter-spacing: .6px;
+}
+
+main section.post div.title * {
+ font: 3rem "Poppins_med";
+ margin-bottom: 2rem;
+}
+
+main section.post div.description * { text-align: center; margin: auto; }
+
+main section.post div.description p {
+ width: 70%;
+ font: 1.5rem "Poppins_med";
+}
+
+footer {
+ width: 100vw;
+}

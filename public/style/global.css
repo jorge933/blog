@@ -1,0 +1,53 @@
+* {
+ padding: 0;
+ margin: 0;
+ text-decoration: none;
+ word-break: break-all;
+ word-wrap: break-word;
+ list-style: none;
+ outline: none;
+}
+
+html {
+ font-size: 62.5%;
+}
+
+body {
+ padding-bottom: 2rem;
+ overflow-x: hidden;
+}
+
+@font-face {
+ font-family: "Poppins_med";
+ src: url(../fonts/Poppins-Medium.ttf);
+}
+
+@font-face {
+ font-family: "Poppins_sem-bold";
+ src: url(../fonts/Poppins-SemiBold.ttf);
+}
+
+@font-face {
+ font-family: "Poppins_bold";
+ src: url(../fonts/Poppins-Bold.ttf);
+}
+
+@font-face {
+ font-family: "Fira_reg";
+ src: url(../fonts/FiraCode-Regular.ttf);
+}
+
+@font-face {
+ font-family: "Fira_med";
+ src: url(../fonts/FiraCode-Medium.ttf);
+}
+
+@font-face {
+ font-family: "Fira_sem_bold";
+ src: url(../fonts/FiraCode-SemiBold.ttf);
+}
+
+@font-face {
+ font-family: "Fira_bold";
+ src: url(../fonts/FiraCode-Bold.ttf);
+}

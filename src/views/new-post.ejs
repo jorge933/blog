@@ -1,0 +1,38 @@
+<%- include('./inc/header') %>
+
+    <main>
+        <form action="/create-post" method="POST" autocomplete="off">
+
+            <input name="title" type="text" placeholder="Título"
+            maxlength="40" minlength="5" required autofocus>
+
+            <textarea name="content" placeholder="Conteudo"
+            maxlength="400" minlength="40" required></textarea>
+
+            <select name="language">
+                <option></option>
+                <option>Assembly</option>
+                <option>C e derivados</option>
+                <option>CSS</option>
+                <option>Dart</option>
+                <option>Go</option>
+                <option>HTML</option>
+                <option>Java</option>
+                <option>JavaScript</option>
+                <option>Kotlin</option>
+                <option>Matlab</option>
+                <option>Objective-C</option>
+                <option>PHP</option>
+                <option>Python</option>
+                <option>R</option>
+                <option>Ruby</option>
+                <option>SQL</option>
+                <option>Swift</option>
+                <option>Typescript</option>
+            </select>
+
+            <input type="submit" value="Criar post">
+        </form>
+    </main>
+
+<%- include('./inc/footer') %>

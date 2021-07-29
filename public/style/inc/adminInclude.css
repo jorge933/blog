@@ -1,0 +1,124 @@
+@import url(./forms.css);
+
+main div.hamburger-icon {
+ width: 2rem;
+ position: absolute;
+ top: 4rem;
+ left: 1vw;
+ cursor: pointer;
+ margin-top: 1rem;
+ transition: 1s all ease;
+}
+
+main div.hamburger-icon.active { left: 22vw }
+
+main aside.menu {
+ font-size: 0px;
+ width: 0vw;
+ height: 80vh;
+ transition: 1s;
+ margin-top: -2rem;
+}
+
+main aside.menu.active {
+ font-size: 1.5rem;
+ width: 20vw;
+ background-color: #363434;
+}
+
+main aside.menu ul {
+ display: none;
+}
+
+main aside.menu.active ul {
+ display: flex;
+ flex-direction: column;
+ justify-content: flex-start; 
+}
+
+main aside.menu ul li {
+ height: 3rem;
+ width: 100%;
+ border-bottom: 1px solid #202020;
+}
+
+main aside.menu ul li:hover {
+ background-color: #505050;
+}
+
+main aside.menu ul li a {
+ color: #aaa;
+ font: 1.7rem "Poppins_sem-bold";
+ padding: 0 5rem;
+ text-align: center;
+}
+
+main aside.menu ul li:hover a {
+ color: white;
+}
+
+main section.main div.new-admin {
+ position: absolute;
+ top: 20%;
+ right: 5%;
+ display: flex;
+ flex-direction: column;
+}
+
+main section.main div.new-admin button, main section.main div.new-admin a {
+ color: #fff;
+ background-color: rgba(0, 89, 255, 0.747);
+ padding: 1rem 1.5rem;
+ font: 1.5rem "Poppins_sem-bold";
+ border-radius: 5px;
+ border: none;
+ cursor: pointer;
+ margin: 1rem 0;
+}
+
+section.modal {
+ position: absolute;
+ height: 1px;
+ width : 1px;
+ padding: 0;
+ margin: -1px;
+ overflow: hidden;
+ clip-path: rect(0, 0, 0, 0);
+ white-space: nowrap;
+ border-width: 0;
+}
+
+section.modal.active {
+ width: 100vw;
+ height: 100vh;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ background-color: #20202056;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+section.modal.active form {
+ width: 35vw;
+ height: 30vh;
+ display: flex;
+ flex-direction: column;
+}
+
+section.modal.active form div.inputs {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
+
+section.modal.active form div.inputs input, section.modal.active form div.inputs textarea, .input {
+ width: 100%;
+ font: 1.5rem "Poppins_med";
+ margin-top: 2rem;
+ padding: 5px;
+ resize: none;
+ border: rgb(51, 50, 50) solid 2px;
+ border-radius: 5px;
+}

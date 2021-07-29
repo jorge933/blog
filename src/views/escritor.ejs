@@ -1,0 +1,19 @@
+<%- include('./inc/header') %>
+
+    <main>
+        <section class="header-main">
+            <h2>Techblog os melhores artigos sobre tecnologia</h2>
+            <p class="p-header">Temos o melhor suporte para você caso qualquer coisa aconteça :&#x29;</p>
+        </section>
+
+        <section class="main">
+            <p class="reason-textp">Nos diga o porque você quer escrever posts</p>
+
+            <form action="/ser-um-escritor" method="POST">
+                <textarea name="reason" class="reason" placeholder="Motivo porquê você quer ser um escritor" required minlength="20"></textarea>
+                <input type="submit">
+            </form>
+        </section>
+    </main>
+
+<%- include('./inc/footer') %>

@@ -1,0 +1,17 @@
+<%- include('../inc/header') %>
+
+    <main>
+        <%- include('./inc/menu') %>
+
+        <section class="main">
+            <% if (level === 3) { %>
+                <div class="new-admin">
+                    <button>Novo administrador</button>
+                </div>
+            <% } %>
+        </section>
+    </main>
+
+
+<%- include('./inc/modal') %> 
+<%- include('../inc/footer') %>

@@ -1,0 +1,9 @@
+dotenv
+body-parser
+ejs
+express
+express-session
+passport
+passport-google-oauth2
+sqlite
+sqlite3

@@ -1,0 +1,38 @@
+<% if (noposts !== true) { %>
+    <% posts.forEach(posts => { %>
+        <div class="post-container search">
+            <a href="/post/<%= posts.id %>">
+                <div class="header-post">
+                    <img src="<%= posts.author_photo %>" alt="Imagem de perfil do criador" width="50">
+                    <span class="name">
+                        <%= posts.author_name %>
+                    </span>
+                </div>
+
+                <div class="main-post">
+                    <h2 class="title-post">
+                        <% if (posts.title.length>= 20) { %>
+
+                            <%= posts.title.substr(0, 20) + '...' %>
+                        <% } else { %>
+                            <%= posts.title %>
+                        <% } %>
+                    </h2>
+                    <p class="content-post">
+                            <% if (posts.content.length>= 170) { %>
+
+                                <%= posts.content.substr(0, 170) + '...' %>
+                            <% } else { %>
+                                    <%= posts.content %>
+                            <% } %>
+                    </p>
+                </div>
+
+                <div class="footer-post"> <span class="lang <%= posts.lang.toLowerCase().replace(' ', '-') %>">
+                        <%= posts.lang %>
+                    </span> </div>
+            </a>
+        </div>
+        <% }) } else { %>
+            <p class="noposts">Nenhum post criado</p>
+            <% } %>

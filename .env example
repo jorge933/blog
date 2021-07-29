@@ -1,0 +1,4 @@
+GOOGLE_CLIENT_ID=seu id do google auth
+GOOGLE_CLIENT_SECRET=google secret
+port=5000
+SECRET=Chave Secreta para criar sessões

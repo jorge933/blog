@@ -1,0 +1,26 @@
+main {
+ margin-top: 5rem;
+ width: 100vw;
+ display: flex;
+ flex-direction: column;
+}
+
+main section.filter {
+ width: 80vw;
+ margin: 0 0 5rem 20vw;
+ display: flex;
+ justify-content: flex-end;
+ overflow: auto;
+}
+
+main section.filter .langs {
+ overflow: auto !important;
+ display: flex;
+ justify-content: flex-end;
+}
+
+main section.filter .langs a.lang-button {
+ margin-right: 1rem;
+ font: 1.2rem sans-serif;
+ color: #202020;
+}

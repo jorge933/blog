@@ -1,0 +1,84 @@
+@import url(./inc/adminInclude.css);
+
+main section.modal-delete, main section.new-topic {
+ width: 1px;
+ height: 1px;
+ position: absolute;
+ left: -150em;
+ top: -100em;
+ z-index: 1;
+}
+
+main section.modal-delete.active {
+ width: 100vw;
+ height: auto;
+ border: 1px solid transparent;
+ top: 0;
+ left: 0;
+ display: flex;
+ flex-direction: column;
+ justify-content: flex-start;
+}
+
+main section.modal-delete.active {
+ background-color: rgba(0, 0, 0, 0.445);
+}
+
+main section.modal-delete.active .cancel-delete, main section.new-topic.active .cancel-newTopic {
+ position: fixed;
+ top: 2rem;
+ right: 1rem;
+ background: none;
+ border: none;
+ font: 1.5rem "Poppins_med";
+ cursor: pointer;
+ z-index: 5;
+}
+
+main section.modal-delete .lang-container {
+ width: 100vw;
+ height: 9vh;
+ display: flex;
+ justify-content: space-evenly;
+ align-items: center;
+ margin: 2rem 0 0;
+ background-color: rgba(255, 255, 255, 0.308);
+}
+
+main section.modal-delete .lang-container span {
+ font: 1.4rem "Poppins_sem-bold";
+}
+
+main section.modal-delete .lang-container button {
+ color: #fff;
+ background-color: rgba(226, 28, 28, 0.747);
+ padding: 1rem;
+ font: 1.3rem "Poppins_sem-bold";
+ border-radius: 5px;
+ border: none;
+ cursor: pointer;
+ margin: 1rem 0;
+ height: 4rem;
+ width: 15rem;
+}
+
+main section.new-topic.active {
+ width: 100vw;
+ height: 100vh;
+ display: flex; flex-direction: column; align-items: center; justify-content: center;
+ background-color: rgba(0, 0, 0, 0.384);
+ position: absolute;
+ top: 0;
+ left: 0;
+}
+
+main section.new-topic form {
+ width: 20vw;
+ height: 20rem;
+}
+
+main section.new-topic form input[type="text"] { padding: .5rem 0 .5rem .5rem }
+
+main section.new-topic button.cancel-newTopic {
+    z-index: 5;
+}

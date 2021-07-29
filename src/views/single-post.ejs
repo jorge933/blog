@@ -1,0 +1,26 @@
+<%- include('./inc/header') %>
+
+    <main>
+        <section class="profile-infos">
+            <div class="photo"> <img src="<%= photo_author %> " alt="Photo profile"> </div>
+            <div class="div-name">
+                <span class="name"> <%= name_author %> </span>
+                <span class="lang"> <%= lang %> </span>
+                <span class="created-at"><%= create %></span>
+            </div>
+        </section>
+
+        <section class="post">
+            <div class="title"> <h1><%- title %> </h1> </div>
+
+            <div class="description">
+                <article>
+                    <p>
+                        <%- content %> 
+                    </p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+<%- include('./inc/footer') %> 

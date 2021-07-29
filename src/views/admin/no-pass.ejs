@@ -1,0 +1,14 @@
+<%- include('../inc/header') %>
+    <main>
+        <p>Olá <%= name %> crie uma senha para continuar</p>
+        <form action="/new-pass" method="post">
+            <div>
+                <input type="password" name="pass" placeholder="Senha" required minlength="8" maxlength="20">
+                <button class="typeText" type="button">Vísivel</button>
+            </div>
+            <input type="submit">
+        </form>
+    </main>
+
+    <script src="/scripts/input2text.js"></script>
+    <%- include('../inc/footer') %>

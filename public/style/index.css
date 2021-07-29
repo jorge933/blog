@@ -1,0 +1,12 @@
+main section.header {
+ margin: 5rem 0 0;
+ display: flex;
+ justify-content: space-evenly;
+}
+
+main section.header .main-description { display: flex;  align-items: center }
+
+main section.header .main-description p {
+ font: 4rem "Poppins_bold", sans-serif;
+ color: rgb(12, 10, 10);
+}

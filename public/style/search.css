@@ -1,0 +1,8 @@
+main section.main-header p.result {
+ font-size: 2.3rem;
+ text-align: center;
+ font-family: "Poppins_med";
+ color: #303030;
+}
+
+main section.main-header p.result span.query { font-family: "Poppins_bold" }
