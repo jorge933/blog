@@ -48,21 +48,10 @@ app.set("port", port);
 
 const server = http.createServer(app);
 
-const {Server, Socket} = require('socket.io');
-
-let options = {
-    pingTimeout: 30000,
-}
-const io = new Server(server, options)
-
-io.on("connection", socket => {
-    console.log('new connection: ',socket.id);
-});
+const socket = require('./socket/deleteTopic');
+socket.index(server);
 
 server.on("error", onError);
-server.on("listening", onListening); 
-
-
-
+server.on("listening", onListening);
 
 server.listen(port);

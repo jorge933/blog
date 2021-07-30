@@ -39,17 +39,28 @@ main section.modal-delete .lang-container {
  width: 100vw;
  height: 9vh;
  display: flex;
- justify-content: space-evenly;
+ /* justify-content: center; */
  align-items: center;
  margin: 2rem 0 0;
  background-color: rgba(255, 255, 255, 0.308);
 }
 
-main section.modal-delete .lang-container span {
- font: 1.4rem "Poppins_sem-bold";
+main section.modal-delete .lang-container div {
+ width: 50%;
+ display: flex;
+ 
 }
 
-main section.modal-delete .lang-container button {
+main section.modal-delete .lang-container div.span { justify-content: flex-start }
+
+main section.modal-delete .lang-container div.button { justify-content: flex-end }
+
+main section.modal-delete .lang-container div span {
+ font: 1.4rem "Poppins_sem-bold";
+ margin-left: 45%;
+}
+
+main section.modal-delete .lang-container div button {
  color: #fff;
  background-color: rgba(226, 28, 28, 0.747);
  padding: 1rem;
@@ -60,6 +71,7 @@ main section.modal-delete .lang-container button {
  margin: 1rem 0;
  height: 4rem;
  width: 15rem;
+ margin-right: 45%;
 }
 
 main section.new-topic.active {

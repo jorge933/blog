@@ -43,7 +43,7 @@ app.get('/logout', (req, res) => {
     res.redirect('/');
 });
 
-// posts =================================================================================================
+// post =================================================================================================
 
 const CreatePostController = require('./controllers/POST/CreatePostController');
 const WriterController = require('./controllers/POST/WriterController');
@@ -66,15 +66,22 @@ app.get('/auth/google/callback',
 // admin =================================================================================================
 
 const NewAdminController = require('./controllers/admin/NewAdminController');
+const NewTopicController = require('./controllers/admin/NewTopicController')
+
 const AdminInitialize = require('./controllers/admin/AdminInitialize');
 const NewPassController = require('./controllers/admin/NewPassController');
+const ManageTopicsController = require('./controllers/admin/ManageTopicsController');
 
 app.get('/admin', AdminInitialize.index);
 
-app.get('/admin/manage-topics', (req, res) => res.render('admin/manage-topics', { css: 'manage-topic-admin', title: 'Tópicos', isLogged: false, level: 3 }))
+app.get('/admin/manage-topics', ManageTopicsController.index);
 
 app.post('/new-admin', NewAdminController.index);
 
+
+
 app.post('/new-pass', NewPassController.index);
+
+app.post('/new-topic', NewTopicController.index)
 
 module.exports = app

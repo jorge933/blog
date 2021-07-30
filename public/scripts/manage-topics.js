@@ -18,3 +18,28 @@ open_newTopic.addEventListener('click', () => {
 document.querySelector('main section.new-topic .cancel-newTopic').addEventListener('click', () => {
     modal_newTopic.classList.remove('active');
 });
+
+const buttons = document.querySelectorAll('main section.modal-delete .lang-container div button');
+const lang = document.querySelectorAll('main section.modal-delete .lang-container div span');
+const langContainer = document.querySelectorAll('main section.modal-delete .lang-container')
+const socket = io();
+const user = document.querySelector('main input[type="hidden"]');
+
+for (let i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener("click", function() {
+      const infos = {
+          lang: lang[i].innerHTML,
+          user: 'Jorge Vitor P.'
+      }
+      socket.emit('deleteTopic', infos);
+
+      socket.on('resTopic', data => {
+        if (data.res === true) {
+            langContainer[i].remove();
+        } else if (data.res === false) {
+            console.log('Não autorizado');
+        }
+      })
+    });
+}
+

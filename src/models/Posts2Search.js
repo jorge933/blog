@@ -4,6 +4,8 @@ module.exports = {
     async index() {
         const db = await Database();
 
-        return await db.all('SELECT * FROM posts')
+        const q = await db.all('SELECT * FROM posts');
+        await db.close();
+        return q;
     }
 }

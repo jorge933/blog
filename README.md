@@ -45,6 +45,10 @@ Nos testes de velocidade do google a velocidade do site ficou entra 98, 99 no de
   cd blog
   npm install
   npm run init-db
+```
+
+crie um arquivo .env e o ajuste como o .env example
+```bash
   npm start
 ```
 

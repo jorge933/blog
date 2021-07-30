@@ -27,12 +27,12 @@ module.exports = {
 
             const already_asked_writer = await db.all('SELECT * FROM new_writers WHERE user = ?', [user]);
             const already_writer = await db.all('SELECT * FROM new_writers WHERE user = ? AND writer = "true"', [user]).catch(e => console.log('e'));
-
+            await db.close();
             if (already_asked_writer.length > 0) return res.send('Você ja solicitou para ser escritor aguarde mais um pouco!');
             if (already_writer.length > 0) return res.send('Você ja é um escritor!!!');
 
             await db.run('INSERT INTO new_writers (user, picture, reason, date) VALUES(?, ?, ?, ?)', [user, picture, reason, final_date]);
-
+            await db.close();
             return res.send('seu pedido para ser um escritor foi recebido com sucesso');
         } else {
             return res.redirect('/');

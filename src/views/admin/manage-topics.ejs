@@ -1,10 +1,11 @@
 <%- include('../inc/header') %>
 
     <main>
+        <!-- <input type="hidden" class="user-infos" value="<%# name %>"> -->
         <%- include('./inc/menu') %>
 
             <section class="main">
-                <% if (level===3) { %>
+                <% if (level === 3) { %>
                     <div class="new-admin">
                         <button>Novo administrador</button>
                         <button class="new-topic-button">Novo tópico</button>
@@ -13,20 +14,22 @@
                     <% } %>
             </section>
 
-            <section class="modal-delete">
+            <section class="modal-delete active">
                 <div class="delete-content">
                     <input type="hidden" style="clip: rect(0, 0, 0, 0); position: absolute; left: -10rem;" class="lang-click">
                     <button class="cancel-delete" type="button">Cancelar</button>
-
-                    <div class="lang-container">
-                        <span class="lang">Dart</span>
-                        <button>Excluir</button>
-                    </div>
+                    
+                    <% topics.forEach(topic => { %>
+                        <div class="lang-container">
+                            <div class="span"><span class="lang"><%= topic.lang %></span></div>
+                            <div class="button"><button>Excluir</button></div>
+                        </div>
+                    <% }) %>
                 </div>
             </section>
 
             <section class="new-topic">
-                <form action="/new-post">
+                <form action="/new-topic" method="POST" autocomplete="off">
                     <input type="text" name="topic" id="" class="input" placeholder="Nome do tópico">
                     <input type="submit">
                 </form>

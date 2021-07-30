@@ -28,9 +28,10 @@ module.exports = {
                 const create = `Criado em ${date}/${month}/${created_at.getFullYear()} ás ${hours}:${minutes}`;
 
                 await db.run('INSERT INTO posts(title, content, author_name, author_photo, created_at, lang) VALUES(?, ?, ?, ?, ?, ?)', [title, content, infos.displayName, infos.picture, create, lang]);
-
                 const id_post = await db.all('SELECT id FROM posts WHERE author_name = ? AND created_at = ?', [infos.displayName, create]);
-                res.redirect(`/post/${id_post[0].id}`);
+                
+                await db.close();
+                return res.redirect(`/post/${id_post[0].id}`);
             } else {
                 console.log('burlou as langs');
                 return res.send(`Olá ${infos.displayName}, por favor não tente burlar as linguagens, caso tenha um pedido para fazer entre em contato os desenvolvedor <br>

@@ -8,7 +8,8 @@ module.exports = {
             const db = await Database();
 
             const post = await db.all('SELECT * FROM posts WHERE id = ?', [id_post]);
-
+            await db.close();
+            
             if (post.length > 0) {
                 let Logged;
                 let name = '';

@@ -3,6 +3,8 @@ module.exports = {
     async index(req, res) {
         const Posts = await PostsModel.index()
         let query = req.query.q.trim();
+
+        if (query === '*') return res.redirect('/');
         
         const filter = req.query.filter
         const query_regExp = new RegExp(query.toLowerCase(), 'gi')

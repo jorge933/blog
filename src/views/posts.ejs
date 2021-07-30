@@ -3,24 +3,9 @@
     <main>
         <section class="filter">
             <div class="langs">
-                <a href="/posts/lang/assembly" class="lang-button">Assembly</a>
-                <a href="/posts/lang/C-e-derivados" class="lang-button">C e derivados</a>
-                <a href="/posts/lang/CSS" class="lang-button">CSS</a>
-                <a href="/posts/lang/Dart" class="lang-button">Dart</a>
-                <a href="/posts/lang/go" class="lang-button">Go</a>
-                <a href="/posts/lang/HTML" class="lang-button">HTML</a>
-                <a href="/posts/lang/Java" class="lang-button">Java</a>
-                <a href="/posts/lang/JavaScript" class="lang-button">JavaScript</a>
-                <a href="/posts/lang/Kotlin" class="lang-button">Kotlin</a>
-                <a href="/posts/lang/Matlab" class="lang-button">Matlab</a>
-                <a href="/posts/lang/Objective-C" class="lang-button">Objective-C</a>
-                <a href="/posts/lang/PHP" class="lang-button">PHP</a>
-                <a href="/posts/lang/Python" class="lang-button">Python</a>
-                <a href="/posts/lang/R" class="lang-button">R</a>
-                <a href="/posts/lang/Ruby" class="lang-button">Ruby</a>
-                <a href="/posts/lang/SQL" class="lang-button">SQL</a>
-                <a href="/posts/lang/Swift" class="lang-button">Swift</a>
-                <a href="/posts/lang/Typescript" class="lang-button">Typescript</a>
+                <% topics.forEach(topic => { %>
+                    <a href="/posts/lang/<%= topic.lang.replace(' ', '-') %>" class="lang-button"><%= topic.lang %></a>
+                <% }) %>
             </div>
         </section>
 

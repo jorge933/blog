@@ -11,24 +11,9 @@
 
             <select name="language">
                 <option></option>
-                <option>Assembly</option>
-                <option>C e derivados</option>
-                <option>CSS</option>
-                <option>Dart</option>
-                <option>Go</option>
-                <option>HTML</option>
-                <option>Java</option>
-                <option>JavaScript</option>
-                <option>Kotlin</option>
-                <option>Matlab</option>
-                <option>Objective-C</option>
-                <option>PHP</option>
-                <option>Python</option>
-                <option>R</option>
-                <option>Ruby</option>
-                <option>SQL</option>
-                <option>Swift</option>
-                <option>Typescript</option>
+                <% topics.forEach(topic => { %>
+                    <option><%= topic.lang %> </option>
+                <% }) %>
             </select>
 
             <input type="submit" value="Criar post">

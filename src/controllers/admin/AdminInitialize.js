@@ -4,6 +4,7 @@ module.exports = {
     async index(req, res) {
         if (req.user && req.user.admin) {
             const infos = await UserInitialize(req.user.displayName);
+            
             if (infos[0].admin === 'true') {
                 req.user.level = infos[0].admin_level
             }

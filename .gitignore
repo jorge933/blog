@@ -1,0 +1,5 @@
+node_modules/
+.env
+nodemon.json
+package-lock.json
+src/config/db.sqlite
