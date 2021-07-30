@@ -29,7 +29,7 @@ Neste blog você encontra artigos sobre muitas linguagens de tecnologia
 
 
 ## Otimizações
-Nos testes de velocidade do google a velocidade do site ficou entra 98, 99 no desktop, ja no mobile 94, 95
+Nos testes de velocidade do google a velocidade do site ficou entre 98, 99 no desktop, ja no mobile 94, 95
 
 
 ## Licença
