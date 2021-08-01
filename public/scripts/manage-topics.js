@@ -29,7 +29,7 @@ for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener("click", function() {
       const infos = {
           lang: lang[i].innerHTML,
-          user: 'Jorge Vitor P.'
+          user: user.value
       }
       socket.emit('deleteTopic', infos);
 

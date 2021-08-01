@@ -48,7 +48,7 @@ app.set("port", port);
 
 const server = http.createServer(app);
 
-const socket = require('./socket/deleteTopic');
+const socket = require('./socket/index');
 socket.index(server);
 
 server.on("error", onError);

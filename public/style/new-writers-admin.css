@@ -1,0 +1,56 @@
+main section.writers div.writer-container {
+ width: 100vw;
+ /* height: 10rem; */
+ display: flex;
+ flex-direction: column;
+ background-color: rgba(20, 82, 197, 0.425);
+ padding: 2rem 0;
+ margin-top: 1rem;
+}
+
+main section.writers div.writer-container div.header {
+ width: 100%;
+ height: 4rem;
+ font: 1.5rem "Poppins_sem-bol";
+ display: flex;
+ align-items: center;
+ margin-bottom: .5rem;
+}
+
+main section.writers div.writer-container div.header img.img-profile {
+ clip-path: circle();
+ border-radius: 50%; /* total circle */
+ margin: 0 1.5rem;
+}
+
+main section.writers div.writer-container div.main {
+ font: 1.3rem "Fira_med";
+ word-wrap: break-word;
+ word-break: break-all;
+ margin: 0 0 1rem 5rem;
+}
+
+main section.writers div.writer-container div.flex { display: flex; justify-content: flex-end }
+
+main section.writers div.writer-container div.flex div.buttons {
+ height: 3rem;
+}
+
+main section.writers div.writer-container div.flex div.buttons button {
+ padding: .5rem 1rem;
+ border-radius: .5rem;
+ border: none;
+ margin: 0 2rem;
+ font: 1.5rem "Poppins_sem-bold";
+ color: white;
+ cursor: pointer;
+}
+
+main section.writers div.writer-container div.flex div.buttons button.cancel { background-color: rgb(207, 21, 21) }
+main section.writers div.writer-container div.flex div.buttons button.confirm { background-color: rgb(26, 69, 189) }
+
+main section.writers p.no-writer {
+ text-align: center;
+ font: 1.5rem "Poppins_sem-bold";
+ margin-top: 2rem;
+}

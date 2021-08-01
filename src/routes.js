@@ -66,7 +66,8 @@ app.get('/auth/google/callback',
 // admin =================================================================================================
 
 const NewAdminController = require('./controllers/admin/NewAdminController');
-const NewTopicController = require('./controllers/admin/NewTopicController')
+const NewTopicController = require('./controllers/admin/NewTopicController');
+const LoadWritersController = require('./controllers/admin/LoadWritersController');
 
 const AdminInitialize = require('./controllers/admin/AdminInitialize');
 const NewPassController = require('./controllers/admin/NewPassController');
@@ -74,11 +75,13 @@ const ManageTopicsController = require('./controllers/admin/ManageTopicsControll
 
 app.get('/admin', AdminInitialize.index);
 
-app.get('/admin/manage-topics', ManageTopicsController.index);
+app.get('/admin/gerenciar-topicos', ManageTopicsController.index);
+
+app.get('/admin/novos-escritores', LoadWritersController.index);
+
+
 
 app.post('/new-admin', NewAdminController.index);
-
-
 
 app.post('/new-pass', NewPassController.index);
 

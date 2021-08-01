@@ -26,8 +26,8 @@ module.exports = {
             const final_date = `Pedido feito em ${date}/${month}/${created_at.getFullYear()} ás ${hours}:${minutes}`;
 
             const already_asked_writer = await db.all('SELECT * FROM new_writers WHERE user = ?', [user]);
-            const already_writer = await db.all('SELECT * FROM new_writers WHERE user = ? AND writer = "true"', [user]).catch(e => console.log('e'));
-            await db.close();
+            const already_writer = await db.all('SELECT * FROM users WHERE username = ? AND writer = ?', ["true", user]);
+            
             if (already_asked_writer.length > 0) return res.send('Você ja solicitou para ser escritor aguarde mais um pouco!');
             if (already_writer.length > 0) return res.send('Você ja é um escritor!!!');
 

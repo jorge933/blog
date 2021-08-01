@@ -25,7 +25,7 @@ const initDb = {
                 admin TEXT,
                 password TEXT,
                 email TEXT,
-                admin_level NUMBER
+                admin_level INTEGER
             )
         `)
 
@@ -35,7 +35,17 @@ const initDb = {
                 lang TEXT
             )
         `) // tópics
-            
+        
+        await db.exec(`
+            CREATE TABLE new_writers(
+                id INTEGER PRIMARY KEY,
+                user TEXT,
+                picture TEXT,
+                reason TEXT,
+                date TEXT)
+        `);
+
+        
         await db.run("INSERT INTO langs (lang) VALUES('Assembly')");
         await db.run("INSERT INTO langs (lang) VALUES('C e derivados')");
         await db.run("INSERT INTO langs (lang) VALUES('CSS')");

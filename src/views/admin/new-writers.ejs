@@ -1,0 +1,32 @@
+<%- include('../inc/header') %>
+    <main>
+        <input type="hidden" value="<%= name %>">
+        <section class="writers">
+            <% if (noWriters === false) { %>
+                <% writers.forEach(writer => { %>
+                    <div class="writer-container">
+                        <div class="header">
+                            <img src="<%= writer.picture %>"
+                                class="img-profile" alt="Foto de perfil" width="40">
+                            <span class="name"><%= writer.user %></span>
+                        </div>
+
+                        <div class="main">
+                            <p><%= writer.reason %></p>
+                        </div>
+    
+                        <div class="flex">
+                            <div class="buttons">
+                                <button type="button" class="confirm">Confirmar</button>
+                                <button type="button" class="cancel">Cancelar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <% }) %>
+            <% } else { %>
+                <p class="no-writer">Sem pedidos para ser escritor.</p>
+            <% } %>
+        </section>
+    </main>
+    <script src="/scripts/new-writers.js"></script>
+    <%- include('../inc/footer') %>

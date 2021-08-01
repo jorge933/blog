@@ -14,7 +14,7 @@ module.exports = {
             } else {
                 res.render('admin/admin', { css: 'admin', title: 'Admin', isLogged: true, name: req.user.displayName, photo: req.user.picture, writer: true, admin: true, level: req.user.level })
             }
-        } else return res.sendStatus(401).send('Não tente invadir a area de administradores');
+        } else return res.redirect('/');
         return;
     }
 }

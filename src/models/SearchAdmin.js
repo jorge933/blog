@@ -1,12 +1,20 @@
 const Database = require('../config/config');
 
-async function search(user) {
+async function search(where, user) {
     const db = await Database();
+    let query;
 
-    const query = await db.all('SELECT * FROM users WHERE email = ? AND admin = "true"', [user]);
+    if (where === 'email') {
+        const q = await db.all('SELECT * FROM users WHERE email = ? AND admin = "true"', [user]);
+        query = q;
+    } else {
+        const q = await db.all('SELECT * FROM users WHERE username = ? AND admin = "true"', [user]);
+        query = q;
+    }
     
-    db.close();
-    if (query.length > 0) {
+    await db.close();
+
+    if (query.length >= 1) {
         return query;
     } else {
         const noAdmins = true;
