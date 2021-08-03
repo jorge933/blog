@@ -2,25 +2,47 @@
 
     <main>
         <section class="profile-infos">
-            <div class="photo"> <img src="<%= photo_author %> " alt="Photo profile"> </div>
-            <div class="div-name">
-                <span class="name"> <%= name_author %> </span>
-                <span class="lang"> <%= lang %> </span>
-                <span class="created-at"><%= create %></span>
-            </div>
+            <input type="hidden" value="<%= id_post %>" class="post-id">
+            <input type="hidden" value="ᴊᴏʀɢɪɴ" class="user">
+            <% if (isLogged === true && name_author === name || admin === true) { %>
+                <div class="button-options"> <i class="fas fa-ellipsis-v"></i> </div>
+                <div class="options">
+                    <button class="exclude">Excluir post</button>
+                </div>
+            <% } %>
+
+                    <div class="photo"> <img src="<%= photo_author %> " alt="Photo profile"> </div>
+                    <div class="div-name">
+                        <span class="name">
+                            <%= name_author %>
+                        </span>
+                        <span class="lang">
+                            <%= lang %>
+                        </span>
+                        <span class="created-at">
+                            <%= create %>
+                        </span>
+                    </div>
         </section>
 
         <section class="post">
-            <div class="title"> <h1><%- title %> </h1> </div>
+            <div class="title">
+                <h1>
+                    <%- title %>
+                </h1>
+            </div>
 
             <div class="description">
                 <article>
                     <p>
-                        <%- content %> 
+                        <%- content %>
                     </p>
                 </article>
             </div>
         </section>
     </main>
 
-<%- include('./inc/footer') %> 
+    <% if (isLogged=== true && name_author === name || admin === true) { %>
+        <script src="/scripts/single-post.js"></script>
+    <% } %>
+    <%- include('./inc/footer') %>

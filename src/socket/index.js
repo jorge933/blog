@@ -11,9 +11,28 @@ module.exports = {
         const io = new Server(server, options);
 
         io.on("connection", async socket => {
-            await deleteTopic(socket);
-            await deleteWriter(socket);
-            await confirmWriter(socket);
+            deleteTopic(socket);
+            deleteWriter(socket);
+            confirmWriter(socket);
+            const SerchAdmin_Model = require('../models/SearchAdmin');
+            const managePost = require('../models/managePost');
+
+            socket.on('deletePost', async data => {
+                const SearcAdmin_res = await SerchAdmin_Model('user', data.user);
+                
+                if (SearcAdmin_res[0].lenth > 0) {
+                    await managePost.deletePost(data.id);
+                    socket.emit('resDeletePost', true);
+                } else {
+                    const posts = await managePost.deletePost2(data.user, data.id);
+                    if (posts[0].author_name === data.user) {
+                        await managePost.deletePost(data.id);
+                        socket.emit('resDeletePost', true);
+                    }
+                }
+
+                return socket.emit('resDeletePost', false);
+            });
         });
     }
 }

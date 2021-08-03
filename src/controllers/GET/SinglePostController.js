@@ -9,7 +9,7 @@ module.exports = {
 
             const post = await db.all('SELECT * FROM posts WHERE id = ?', [id_post]);
             await db.close();
-            
+
             if (post.length > 0) {
                 let Logged;
                 let name = '';
@@ -26,13 +26,12 @@ module.exports = {
                 } else Logged = false
 
 
-                const object = { css: 'single', name_author: post[0].author_name, photo_author: post[0].author_photo, create: post[0].created_at, title: post[0].title, content: post[0].content, lang: post[0].lang, isLogged: Logged, name: name, photo: picture, writer, admin }
-
+                const object = { css: 'single', id_post, name_author: post[0].author_name, photo_author: post[0].author_photo, create: post[0].created_at, title: post[0].title, content: post[0].content, lang: post[0].lang, isLogged: Logged, name: name, photo: picture, writer, admin }
 
                 res.render('single-post', object) 
             } else return res.send('Post não encontrado');
         } else {
             res.send('Post não encontrado');
-        }
+        }   
     }
 }

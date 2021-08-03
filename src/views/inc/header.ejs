@@ -34,18 +34,27 @@
     <% if (css === 'posts' || css === 'search') { %>
         <link rel="stylesheet" href="/style/inc/postContainer.css">
     <% } %>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.3/socket.io.js" integrity="sha512-PU5S6BA03fRv1Q5fpwXjg5nlRrgdoguZ74urFInkbABMCENyx5oP3hrDzYMMPh3qdLdknIvrGj3yqZ4JuU7Nag==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <% if (css === 'manage-topic-admin') { %>
         <style>
             footer { margin-top: .4rem; }
         </style>
     <% } %>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <% if (css === 'single') { %>
+    <% } %>
     <title> <%= title %>  | Blog</title>
 </head>
 
 <body>
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TK3P85F"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TK3P85F" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    <div style="position: fixed; font: 3rem sans-serif; width: 100vw; height: 100vh; background-color: yellow; z-index: 999;">Ative o javascript</div>
+</noscript>
     <header class="header">
         <section class="left">
             <div class="logo"> <a href="/"> <h2 class="logo-text">techblog</h2> </a> </div>

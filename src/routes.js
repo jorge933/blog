@@ -3,7 +3,6 @@ const session = require('express-session');
 const passport = require('passport');
 const app = express.Router();
 require('./controllers/auth/GoogleAuth');
-const path = require('path')
 
 
 app.use(session({ secret: process.env.SECRET, resave: false, saveUninitialized: false, cookie: { maxAge: 1000 * 60 * 60 * 24 * 30}}));
@@ -20,6 +19,7 @@ const PageNewPostController = require('./controllers/GET/PagesController/PageNew
 const PostsFilter = require('./controllers/GET/PostsFilter');
 const SearchController = require('./controllers/GET/SearchController')
 const NeWriterController = require('./controllers/GET/PagesController/NeWriterController');
+const DeleteAccount = require('./controllers/auth/deleteAccount');
 
 app.get('/', InitializeController.index);
 
@@ -42,6 +42,8 @@ app.get('/logout', (req, res) => {
     req.session.destroy();
     res.redirect('/');
 });
+
+app.get('/delete-account', DeleteAccount.index);
 
 // post =================================================================================================
 

@@ -50,3 +50,46 @@ main section.post div.description p {
 footer {
  width: 100vw;
 }
+
+main div.button-options {
+ position: absolute;
+ right: 10rem;
+ font: 1.5rem "Fira_bold";
+ /* width: 15rem; */
+}
+
+main div.button-options i.fas.fa-ellipsis-v {
+ cursor: pointer;
+}
+
+main section.profile-infos div.options {
+ position: absolute;
+ width: 0;
+ clip: rect(0);
+ right: -10rem;
+ opacity: 0;
+ visibility: hidden;
+}
+
+main section.profile-infos div.options.active {
+ width: 15rem;
+ position: absolute;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ margin-top: 10rem;
+ right: 3rem;
+ background-color: rgb(212, 212, 212);
+ border: 5px solid #eeeaea;
+ border-radius: 5px;
+ padding: 1.5rem 0;
+ opacity: 1;
+ visibility: visible;
+}
+
+main section.profile-infos div.options button {
+ background: none;
+ border: none;
+ cursor: pointer;
+ font: 1.5rem "Poppins_sem-bold";
+}
