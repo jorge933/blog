@@ -58,10 +58,8 @@ Depois disso acesse http://localhost:5000/
 
 - Sistema de likes
 - Responsividade
-- Area de administrador
-- Editar e deletar posts
+- Editar posts
 - Perfil
-- Apagar conta
 
 ## Feedback
 
