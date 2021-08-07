@@ -3,7 +3,7 @@
     <main>
         <section class="profile-infos">
             <input type="hidden" value="<%= id_post %>" class="post-id">
-            <input type="hidden" value="ᴊᴏʀɢɪɴ" class="user">
+            <input type="hidden" value="<%= name %>" class="user">
             <% if (isLogged === true && name_author === name || admin === true) { %>
                 <div class="button-options"> <i class="fas fa-ellipsis-v"></i> </div>
                 <div class="options">
@@ -38,11 +38,17 @@
                         <%- content %>
                     </p>
                 </article>
+
+                <div class="buttons-interaction">
+                    <button class="like"><i class="far fa-thumbs-up"></i></button>
+
+                    <button class="deslike"><i class="far fa-thumbs-down"></i></button>
+                </div>
             </div>
         </section>
     </main>
 
-    <% if (isLogged=== true && name_author === name || admin === true) { %>
+    <%# if (isLogged=== true && name_author === name || admin === true) { %>
         <script src="/scripts/single-post.js"></script>
-    <% } %>
+    <%# } %>
     <%- include('./inc/footer') %>

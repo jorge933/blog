@@ -93,3 +93,17 @@ main section.profile-infos div.options button {
  cursor: pointer;
  font: 1.5rem "Poppins_sem-bold";
 }
+
+main section.post div.description div.buttons-interaction { margin-top: 10rem }
+
+main section.post div.description div.buttons-interaction button {
+ background: none;
+ border: none;
+ cursor: pointer;
+}
+
+main section.post div.description div.buttons-interaction button:hover { opacity: .8 }
+
+main section.post div.description div.buttons-interaction button.like { margin: 0 1rem 0 0}
+
+main section.post div.description div.buttons-interaction button i { font-size: 2rem }
