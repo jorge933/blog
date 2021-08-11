@@ -56,7 +56,6 @@ Depois disso acesse http://localhost:5000/
 
 ## Features a serem adicionas
 
-- Sistema de likes
 - Responsividade
 - Editar posts
 - Perfil

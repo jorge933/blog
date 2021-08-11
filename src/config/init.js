@@ -12,7 +12,8 @@ const initDb = {
                 author_name TEXT,
                 author_photo TEXT,
                 created_at TEXT,
-                lang TEXT
+                lang TEXT,
+                likes TEXT
             )
         `);
 

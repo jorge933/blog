@@ -39,16 +39,18 @@
                     </p>
                 </article>
 
-                <div class="buttons-interaction">
-                    <button class="like"><i class="far fa-thumbs-up"></i></button>
-
-                    <button class="deslike"><i class="far fa-thumbs-down"></i></button>
-                </div>
+                <% if (isLogged === true) { %>
+                    <input type="hidden" readonly value="<%= id_post %>" class="post-id">
+                    <input type="hidden" readonly value="<%= email %>" class="email">
+                    <div class="buttons-interaction">
+                        <button class="like"><i class="<%= liked %> fa-thumbs-up"></i> <span class="likes-length"><%= likes %></span></button>
+                    </div>
+                <% } %>
             </div>
         </section>
     </main>
 
-    <%# if (isLogged=== true && name_author === name || admin === true) { %>
+    <% if (isLogged=== true && name_author === name || admin === true) { %>
         <script src="/scripts/single-post.js"></script>
-    <%# } %>
+    <% } %>
     <%- include('./inc/footer') %>

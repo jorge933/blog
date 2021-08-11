@@ -10,12 +10,17 @@ module.exports = {
             const post = await db.all('SELECT * FROM posts WHERE id = ?', [id_post]);
             await db.close();
 
+            const likes = post[0].likes.replace(' ', '1ab2');
+            const likesFinal = likes.split('1ab2');
+
             if (post.length > 0) {
                 let Logged;
                 let name = '';
                 let picture = '';
                 let writer = false;
                 let admin = false;
+                let email = '';
+                let liked = 'far'
 
                 if (req.user) {
                     Logged = true;
@@ -23,10 +28,15 @@ module.exports = {
                     picture = req.user.picture;
                     if (req.user.writer) writer = true;
                     if (req.user.admin) admin = true
+                    email = req.user.email;
+
+                    const emailRegExp  = new RegExp(req.user.email.split('@')[0], 'gi');
+
+                    if (emailRegExp.test(post[0].likes)) {
+                        liked = 'fas'
+                    }
                 } else Logged = false
-
-
-                const object = { css: 'single', id_post, name_author: post[0].author_name, photo_author: post[0].author_photo, create: post[0].created_at, title: post[0].title, content: post[0].content, lang: post[0].lang, isLogged: Logged, name: name, photo: picture, writer, admin }
+                const object = { css: 'single', id_post, name_author: post[0].author_name, photo_author: post[0].author_photo, email, create: post[0].created_at, title: post[0].title, content: post[0].content, lang: post[0].lang, isLogged: Logged, name: name, photo: picture, writer, admin, liked, likes: likesFinal.splice('', 1).length }
 
                 res.render('single-post', object) 
             } else return res.send('Post não encontrado');

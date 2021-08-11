@@ -17,8 +17,7 @@ module.exports = {
             deleteWriter(socket);
             confirmWriter(socket);
             deletePost(socket);
-            ManageInteractions.like(socket);
-            // ManageInteractions.notLike(socket);
+            ManageInteractions(socket);
         });
     }
 }
