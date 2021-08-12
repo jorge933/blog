@@ -27,7 +27,7 @@ module.exports = {
 
                 const create = `Criado em ${date}/${month}/${created_at.getFullYear()} ás ${hours}:${minutes}`;
 
-                await db.run('INSERT INTO posts(title, content, author_name, author_photo, created_at, lang) VALUES(?, ?, ?, ?, ?, ?)', [title, content, infos.displayName, infos.picture, create, lang]);
+                await db.run('INSERT INTO posts(title, content, author_name, author_photo, created_at, lang, likes) VALUES(?, ?, ?, ?, ?, ?, " ")', [title, content, infos.displayName, infos.picture, create, lang]);
                 const id_post = await db.all('SELECT id FROM posts WHERE author_name = ? AND created_at = ?', [infos.displayName, create]);
                 
                 await db.close();

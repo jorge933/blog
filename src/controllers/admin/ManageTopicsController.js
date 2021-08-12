@@ -1,6 +1,6 @@
 module.exports = {
     async index(req, res) {
-        const Topics_Model = require('../../models/topics');
+        const Topics_Model = require('../../models/posts/topics');
         const topics = await Topics_Model.langs();
         
         if (req.user) {

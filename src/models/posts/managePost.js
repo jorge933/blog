@@ -1,4 +1,4 @@
-const Database = require('../config/config');
+const Database = require('../../config/config');
 
 async function deletePost(id) {
     const db = await Database();

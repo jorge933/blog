@@ -1,6 +1,6 @@
 module.exports = {
     async index(req, res) {
-        const deleteAccount_model = require('../../models/deleteAccount');
+        const deleteAccount_model = require('../../models/user/deleteAccount');
         await deleteAccount_model(req.user.email);
         
         req.logout();

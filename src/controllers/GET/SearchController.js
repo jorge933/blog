@@ -1,4 +1,4 @@
-const PostsModel = require('../../models/Posts2Search');
+const PostsModel = require('../../models/posts/Posts2Search');
 module.exports = {
     async index(req, res) {
         const Posts = await PostsModel.index()

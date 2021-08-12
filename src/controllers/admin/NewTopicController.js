@@ -4,7 +4,7 @@ module.exports = {
     async index(req, res) {
         // if (!req.user || !req.user.admin) return res.redirect('/');
         
-        const Topics_Model = require('../../models/topics');
+        const Topics_Model = require('../../models/posts/topics');
         const NewTopic = req.body.topic;
         const ExistTopic = await Topics_Model.searchLang(NewTopic);
 

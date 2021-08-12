@@ -15,9 +15,9 @@ module.exports = {
         if (newAdmin.length < 5 || adminPass.length < 5) return res.redirect('/');
 
         if (parseInt(newAdminLevel) < 1 || parseInt(newAdminLevel) > 3) return res.redirect('/');
-        const ExistEmail_model = require('../../models/SearchUser');
+        const ExistEmail_model = require('../../models/user/SearchUser');
         const existEmail = await ExistEmail_model('email', newAdmin);
-        const SearchAdmin = require('../../models/SearchAdmin');
+        const SearchAdmin = require('../../models/user/SearchAdmin');
         const admin = await SearchAdmin('email', req.user.email);
 
         if (admin === true) return res.redirect('/');

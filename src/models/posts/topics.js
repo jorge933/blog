@@ -1,4 +1,4 @@
-const Database = require('../config/config');
+const Database = require('../../config/config');
 
 async function langs() {
     const db = await Database()

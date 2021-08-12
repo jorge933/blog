@@ -1,5 +1,4 @@
-form textarea, section.modal form input[type="text"] {
- height: 10rem;
+form textarea, section.modal form input[type="text"], div.modal.active form input[type="text"] {
  font: 1.5rem "Poppins_med";
  margin-top: 2rem;
  resize: none;
@@ -8,8 +7,8 @@ form textarea, section.modal form input[type="text"] {
  padding: .5rem .5rem .5rem 1rem;
 }
 
-section.modal form input[type="text"] {
- height: 2rem;
+section.modal form input[type="text"], form textarea {
+ height: 10rem;
 }
 
 ::placeholder {
@@ -17,7 +16,7 @@ section.modal form input[type="text"] {
  font-family: "Poppins_med";
 }
 
-form input[type="submit"],  section.modal form div.buttons button {
+form input[type="submit"],  section.modal form div.buttons button, div.modal.active button.cancel {
  width: 100%;
  padding: .3rem 0;
  background-color: #202020;

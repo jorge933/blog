@@ -1,3 +1,8 @@
+* {
+ word-wrap: normal;
+ word-break: normal;
+}
+
 header {
  width: 100vw;
  height: 10vh;
@@ -156,4 +161,39 @@ footer {
 footer p {
  color: #fff;
  font: 1.5rem "Poppins_med";
+}
+
+@media (max-width: 805px) {
+    header {
+        justify-content: space-around;
+    }
+
+    header section.left { margin: 0 2rem; }
+
+    header section.left div.logo .logo-text { padding-right: .5rem }
+}
+
+@media (max-width: 785px) { 
+    main section.header div.main-image img {display: none}
+}
+
+@media (max-width: 595px) {
+    header {flex-direction: column}
+
+    header section.search {margin-left: 26rem}
+
+    footer {
+        width: 100vw !important;
+    }
+}
+
+@media (max-width: 345px) {
+    header {
+        width: 50vw;
+        margin-left: 5vw;
+    }
+}
+
+@media (max-height: 470px) {
+    header {margin-top: 5vw}
 }

@@ -1,3 +1,5 @@
+@import url(./inc/forms.css);
+
 body {
  overflow-x: hidden;
 }
@@ -40,9 +42,9 @@ main section.post div.title * {
  margin-bottom: 2rem;
 }
 
-main section.post div.description * { text-align: center; margin: auto; }
+main section.post div.description * {  margin: auto; text-align: center }
 
-main section.post div.description p {
+main section.post div.description article * {
  width: 70%;
  font: 1.5rem "Poppins_med";
 }
@@ -107,3 +109,35 @@ main section.post div.description div.buttons-interaction button:hover { opacity
 main section.post div.description div.buttons-interaction button.like { margin: 0 1rem 0 0}
 
 main section.post div.description div.buttons-interaction button i { font-size: 2rem }
+
+
+div.modal {
+ width: 1px;
+ height: 1px;
+ position: fixed;
+ left: -100rem;
+ top: -100rem;
+}
+
+div.modal.active {
+ width: 100vw;
+ height: 100vh;
+ left: 0;
+ top: 0;
+ background-color: rgba(0, 0, 0, 0.4);
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+}
+
+div.modal.active form {
+ width: 50%;
+ height: 50%;
+ display: flex;
+ flex-direction: column;
+}
+
+div.modal.active form div.buttons { display: flex }
+
+div.modal.active form div.buttons * { margin: 1rem }

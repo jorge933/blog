@@ -3,11 +3,14 @@
     <main>
         <section class="profile-infos">
             <input type="hidden" value="<%= id_post %>" class="post-id">
-            <input type="hidden" value="<%= name %>" class="user">
-            <% if (isLogged === true && name_author === name || admin === true) { %>
+            <input type="hidden" value="<%= name_author %>" class="user">
+            <% if (isLogged===true && name_author===name || admin===true) { %>
                 <div class="button-options"> <i class="fas fa-ellipsis-v"></i> </div>
                 <div class="options">
                     <button class="exclude">Excluir post</button>
+                    <% if (isLogged === true && name === name_author) { %>
+                        <button class="edit-post">Editar post</button>
+                    <% } %>
                 </div>
             <% } %>
 
@@ -34,23 +37,37 @@
 
             <div class="description">
                 <article>
-                    <p>
-                        <%- content %>
-                    </p>
+                    <p> <%- content %> </p>
                 </article>
 
-                <% if (isLogged === true) { %>
+                <% if (isLogged===true) { %>
                     <input type="hidden" readonly value="<%= id_post %>" class="post-id">
                     <input type="hidden" readonly value="<%= email %>" class="email">
                     <div class="buttons-interaction">
-                        <button class="like"><i class="<%= liked %> fa-thumbs-up"></i> <span class="likes-length"><%= likes %></span></button>
+                        <button class="like"><i class="<%= liked %> fa-thumbs-up"></i> <span class="likes-length"> <%= likes %> </span></button>
                     </div>
-                <% } %>
+                    <% } %>
             </div>
         </section>
     </main>
 
-    <% if (isLogged=== true && name_author === name || admin === true) { %>
+    <div class="modal">
+        <form action="/edit-post" method="POST" autocomplete="off">
+            <input type="text" name="newTitle" value="<%= title %>" required minlength="5" maxlength="40">
+            <textarea name="newDescription" required minlength="40" maxlength="400"><%= content %></textarea>
+            <input type="hidden" readonly value="<%= id_post %>" name="id">
+            <div class="buttons">
+                <button type="button" class="cancel">Cancelar</button>
+                <input type="submit" value="Editar" style="display: none;">
+            </div>
+        </form>
+    </div>
+
+    <% if (isLogged===true) { %>
         <script src="/scripts/single-post.js"></script>
-    <% } %>
-    <%- include('./inc/footer') %>
+        <% } %>
+
+            <% if (isLogged===true && name_author===name || admin===true) { %>
+                <script src="/scripts/single-post-author.js"></script>
+            <% } %>
+                    <%- include('./inc/footer') %>

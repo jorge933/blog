@@ -1,7 +1,7 @@
 module.exports = {
     async index(req, res) {
         if (req.user && req.user.writer) {
-            const Topics_Model = require('../../../models/topics');
+            const Topics_Model = require('../../../models/posts/topics');
             const topics = await Topics_Model.langs();
             return res.render('new-post', {
                  css: 'new-post', title: 'Novo Post', isLogged: true,

@@ -7,8 +7,8 @@ module.exports = {
 
         if (lang.toLowerCase() === 'c-e-derivados') lang = 'C e derivados';
 
-        const postsReturns = require('../../models/PostsFilter');
-        const Topics_Model = require('../../models/topics');
+        const postsReturns = require('../../models/posts/PostsFilter');
+        const Topics_Model = require('../../models/posts/topics');
         const posts = await postsReturns(lang);
         const topics = await Topics_Model.langs();
 

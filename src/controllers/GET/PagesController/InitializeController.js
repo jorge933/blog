@@ -1,7 +1,7 @@
 module.exports = {
     async index(req, res) {
         if (req.user) {
-            const user_model = require('../../../models/UserInitialize');
+            const user_model = require('../../../models/user/UserInitialize');
             const user = await user_model(req.user.displayName);
             
             if (user.length > 0) {

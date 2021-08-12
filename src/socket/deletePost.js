@@ -1,7 +1,7 @@
 
 function deletePost(socket) {
-    const SerchAdmin_Model = require('../models/SearchAdmin');
-    const managePost = require('../models/managePost');
+    const SerchAdmin_Model = require('../models/user/SearchAdmin');
+    const managePost = require('../models/posts/managePost');
 
     socket.on('deletePost', async data => {
         const SearcAdmin_res = await SerchAdmin_Model('user', data.user);

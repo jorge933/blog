@@ -1,4 +1,4 @@
-const UserInitialize = require('../../models/UserInitialize');
+const UserInitialize = require('../../models/user/UserInitialize');
 
 module.exports = {
     async index(req, res) {

@@ -1,7 +1,7 @@
 module.exports = {
     async index(req, res) {
         if (req.user && req.user.admin && req.user.level >= 2) {
-            const loadWriters_Model = require('../../models/LoadWriters');
+            const loadWriters_Model = require('../../models/writer/LoadWriters');
             const writers = await loadWriters_Model.load();
             const { displayName:name, picture:photo } = req.user;
 

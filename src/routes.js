@@ -4,7 +4,6 @@ const passport = require('passport');
 const app = express.Router();
 require('./controllers/auth/GoogleAuth');
 
-
 app.use(session({ secret: process.env.SECRET, resave: false, saveUninitialized: false, cookie: { maxAge: 1000 * 60 * 60 * 24 * 30}}));
 app.use(passport.initialize());
 app.use(passport.session());
@@ -49,9 +48,11 @@ app.get('/delete-account', DeleteAccount.index);
 
 const CreatePostController = require('./controllers/POST/CreatePostController');
 const WriterController = require('./controllers/POST/WriterController');
+const EditPostController = require('./controllers/POST/EditPostController');
 
 app.post('/create-post', CreatePostController.index);
 app.post('/ser-um-escritor', WriterController.index);
+app.post('/edit-post', EditPostController.index);
 
 // auth =================================================================================================
 
