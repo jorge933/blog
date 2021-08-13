@@ -19,6 +19,7 @@ const PostsFilter = require('./controllers/GET/PostsFilter');
 const SearchController = require('./controllers/GET/SearchController')
 const NeWriterController = require('./controllers/GET/PagesController/NeWriterController');
 const DeleteAccount = require('./controllers/auth/deleteAccount');
+const ProfilesController = require('./controllers/GET/PagesController/ProfilesController')
 
 app.get('/', InitializeController.index);
 
@@ -36,13 +37,18 @@ app.get('/search=', SearchController.index)
 
 app.get('/ser-um-escritor', NeWriterController.index);
 
+app.get('/user/:user', ProfilesController.index);
+
+app.get('/user/:user/posts', (req, res) => res.render('posts-user', {css: 'profile', title: `${req.params.user} Posts`, isLogged: false}))
+
 app.get('/logout', (req, res) => {
     req.logout();
     req.session.destroy();
-    res.redirect('/');
+    return res.redirect('/');
 });
 
 app.get('/delete-account', DeleteAccount.index);
+
 
 // post =================================================================================================
 

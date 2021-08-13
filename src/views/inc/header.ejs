@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="/style/global.css" type="text/css">
     <link rel="stylesheet" href="/style/inc/header-footer.css" type="text/css">
     <link rel="stylesheet" href="/style/<%= css %>.css" type="text/css">
-    <% if (css === 'posts' || css === 'search') { %>
+    <% if (css === 'posts' || css === 'search' || /profile/gi.test(css)) { %>
         <link rel="stylesheet" href="/style/inc/postContainer.css">
     <% } %>
 
@@ -46,7 +46,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <% if (css === 'single') { %>
     <% } %>
-    <title> <%= title %>  | Blog</title>
+    <title> <%= title %>  | TechBlog</title>
 </head>
 
 <body>
@@ -72,7 +72,12 @@
                         <% if (admin) { %>
                             <li> <a href="/admin">Administração</a> </li>
                         <% } %>
+
                     <% } %>
+                        <% if (css === 'profile') { %>
+                            <li><a href="#">Seus Posts</a></li>
+                            <li><a href="#">Posts Curtidos</a></li>
+                        <% } %>
                 </ul>
             </div>
         </section>

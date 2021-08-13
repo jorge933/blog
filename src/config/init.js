@@ -21,11 +21,11 @@ const initDb = {
             CREATE TABLE users(
                 id INTEGER PRIMARY KEY,
                 username TEXT,
+                email TEXT,
                 photo TEXT,
                 writer TEXT,
                 admin TEXT,
                 password TEXT,
-                email TEXT,
                 admin_level INTEGER
             )
         `)

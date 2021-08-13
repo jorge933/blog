@@ -1,0 +1,46 @@
+<%- include('inc/header') %>
+
+    <main>
+        <section class="main">
+            <div class="image-profile"> <img src="<%= User[0].photo %>" alt="" width="150"> </div>
+            <div class="infos">
+                <span class="name"><%= User[0].username %></span>
+                <span class="posts">Posts: <%= PostLength %></span>
+            </div>
+        </section>
+
+
+        <section class="posts">
+            <% if (!noposts) { %>
+                <% Posts.forEach(post => { %>
+                    <div class="post-container search">
+                        <a href="/post/<%= post.id %>">
+                            <div class="header-post">
+                                <img src="<%= post.author_photo %>" alt="Imagem de perfil do criador" width="50">
+                                <span class="name">
+                                    <%= post.author_name %>
+                                </span>
+                            </div>
+            
+                            <div class="main-post">
+                                <h2 class="title-post">
+                                    <%= post.title %>
+                                </h2>
+                                <p class="content-post">
+                                    <%= post.content %>
+                                </p>
+                            </div>
+            
+                            <div class="footer-post"> <span class="lang <%= post.lang.toLowerCase().replace(' ', '-') %>">
+                                    <%= post.lang %>
+                                </span> </div>
+                        </a>
+                    </div>
+                <% }) %>
+            <% } else {%>
+                <p class="noPosts"><%= isLogged === true && User[0].username === name ? 'Você ainda não postou nada.' : `${User[0].username} ainda não postou nada.` %></p> 
+            <% } %>
+        </section>
+    </main>
+
+<%- include('inc/footer') %>

@@ -1,0 +1,48 @@
+main {
+ height: 75vh;
+}
+
+main section.main {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ height: 70%;
+}
+
+main section.main div.image-profile img {
+ clip-path: circle();
+ border-radius: 50%;
+}
+
+main section.main div.infos {
+ margin-top: 3rem;
+ display: flex;
+ flex-direction: column;
+ text-align: center;
+}
+
+main section.main div.infos span {
+ font: 1.5rem "Fira_bold";
+ line-height: 2rem;
+}
+
+main section.posts {
+ height: 30%;
+ margin: 0 0 5rem 0;
+}
+
+main section.posts div.post-container {
+ width: 20rem !important;
+}
+
+main section.posts div.post-container * {
+ word-wrap: break-word;
+ word-break: break-all;
+}
+
+
+main section.posts p.noPosts {
+ font: 2rem "Poppins_bold";
+ text-align: center;
+}
