@@ -19,12 +19,12 @@ const PostsFilter = require('./controllers/GET/PostsFilter');
 const SearchController = require('./controllers/GET/SearchController')
 const NeWriterController = require('./controllers/GET/PagesController/NeWriterController');
 const DeleteAccount = require('./controllers/auth/deleteAccount');
-<<<<<<< HEAD
+
 const ProfilesController = require('./controllers/GET/Profile/ProfilesController');
 const PostsUser = require('./controllers/GET/Profile/PostsUser');
-=======
+
 const ProfilesController = require('./controllers/GET/PagesController/ProfilesController')
->>>>>>> 4ebd161dfd6ad550b4a0173475c73c493d4daadc
+
 
 app.get('/', InitializeController.index);
 
@@ -44,11 +44,11 @@ app.get('/ser-um-escritor', NeWriterController.index);
 
 app.get('/user/:user', ProfilesController.index);
 
-<<<<<<< HEAD
+
 app.get('/user/:user/posts', PostsUser.index);
-=======
+
 app.get('/user/:user/posts', (req, res) => res.render('posts-user', {css: 'profile', title: `${req.params.user} Posts`, isLogged: false}))
->>>>>>> 4ebd161dfd6ad550b4a0173475c73c493d4daadc
+
 
 app.get('/logout', (req, res) => {
     req.logout();
