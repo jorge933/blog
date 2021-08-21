@@ -1,0 +1,22 @@
+<%- include('inc/header') %>
+
+    <main>
+        <section class="main">
+            <div class="image-profile"> <img src="<%= User[0].photo %>" alt="" width="150"> </div>
+            <div class="infos">
+                <span class="name"><%= User[0].username %></span>
+                <span class="posts">Posts: <%= PostLength %></span>
+            </div>
+        </section>
+
+
+        <section class="posts">
+            <% if (!noposts) { %>
+                <%- include('inc/postsContainer') %>
+            <% } else {%>
+                <p class="noPosts"><%= isLogged === true && User[0].username === name ? 'Você ainda não postou nada.' : `${User[0].username} ainda não postou nada.` %></p> 
+            <% } %>
+        </section>
+    </main>
+
+<%- include('inc/footer') %>

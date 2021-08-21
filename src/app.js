@@ -27,4 +27,10 @@ app.use((req, res, next) => {
     next();
 });
 
+app.use((err, req, res, next) => {
+    res.locals.message = err.message;
+    console.log(err);
+    return res.sendStatus(500).send('Erro interno')
+})
+
 module.exports = app;

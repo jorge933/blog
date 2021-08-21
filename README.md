@@ -57,7 +57,6 @@ Depois disso acesse http://localhost:5000/
 ## Features a serem adicionas
 
 - Responsividade
-- Editar posts
 - Perfil
 
 ## Feedback

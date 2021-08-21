@@ -3,10 +3,12 @@
         <div class="post-container search">
             <a href="/post/<%= posts.id %>">
                 <div class="header-post">
-                    <img src="<%= posts.author_photo %>" alt="Imagem de perfil do criador" width="50">
-                    <span class="name">
-                        <%= posts.author_name %>
-                    </span>
+                    <a href="/user/<%= posts.author_name %>"><img src="<%= posts.author_photo %>" alt="Imagem de perfil do criador" width="50"></a>
+                    <a href="/user/<%= posts.author_name %>">
+                        <span class="name">
+                            <%= posts.author_name %>
+                        </span>
+                    </a>
                 </div>
 
                 <div class="main-post">

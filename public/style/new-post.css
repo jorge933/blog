@@ -37,7 +37,7 @@ main form input[type="text"], main form textarea {
 }
 
 main form input[type="submit"] {
- width: 50%;
+ width: 45%;
  padding: .3rem 0;
  background-color: #202020;
  font: 1.5rem "Poppins_med";

@@ -11,6 +11,7 @@ const initDb = {
                 content TEXT,
                 author_name TEXT,
                 author_photo TEXT,
+                email TEXT,
                 created_at TEXT,
                 lang TEXT,
                 likes TEXT
@@ -21,11 +22,11 @@ const initDb = {
             CREATE TABLE users(
                 id INTEGER PRIMARY KEY,
                 username TEXT,
+                email TEXT,
                 photo TEXT,
                 writer TEXT,
                 admin TEXT,
                 password TEXT,
-                email TEXT,
                 admin_level INTEGER
             )
         `)

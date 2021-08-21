@@ -5,15 +5,18 @@ module.exports = {
         const db = await Database();
 
         const SeachUser = require('../../models/user/SearchUser');
-        const users = await SeachUser('user', req.user.displayName);
+        const users = await SeachUser('email', req.user.displayName);
         
         if (users.length !== true) {
             const infos = req.user;
             
             await db.run('INSERT INTO users(username, photo, writer, admin, admin_level, email) VALUES(?, ?, ?, ?, ?, ?)', [infos.displayName, infos.picture, "false", "false", 0, infos.email]);
-            await db.close();
+        } else {
+            await db.run('UPDATE users SET photo = ? WHERE email = ?', [infos.picture, infos.email]);
+            await db.run('UPDATE user SET author_photo = ? WHERE email = ?', [infos.picture, infos.email])
         }
-
+        
+        await db.close();
         return res.redirect('/');
     }
 }

@@ -8,7 +8,7 @@ async function search(where, user) {
         const q = await db.all('SELECT * FROM users WHERE email = ?', [user]);
         query = q;
     } else if (where === 'id') {
-        const q = await db.all('SELECT * FROM users WHERE idEA = ?', [user]);
+        const q = await db.all('SELECT * FROM users WHERE id = ?', [user]);
         query = q;
     } else {
         const q = await db.all('SELECT * FROM users WHERE username = ?', [user]);
