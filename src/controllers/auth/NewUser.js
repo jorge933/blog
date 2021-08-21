@@ -11,10 +11,14 @@ module.exports = {
             const infos = req.user;
             
             await db.run('INSERT INTO users(username, photo, writer, admin, admin_level, email) VALUES(?, ?, ?, ?, ?, ?)', [infos.displayName, infos.picture, "false", "false", 0, infos.email]);
+<<<<<<< HEAD
         } else {
             await db.run('UPDATE users SET photo = ? WHERE email = ?', [infos.picture, infos.email]);
             await db.run('UPDATE user SET author_photo = ? WHERE email = ?', [infos.picture, infos.email])
         }
+=======
+        } else await db.run('UPDATE users SET photo = ? WHERE email = ?', [infos.picture, infos.email]);
+>>>>>>> 4ebd161dfd6ad550b4a0173475c73c493d4daadc
         
         await db.close();
         return res.redirect('/');

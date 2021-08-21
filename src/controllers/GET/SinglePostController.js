@@ -10,7 +10,11 @@ module.exports = {
             const post = await db.all('SELECT * FROM posts WHERE id = ?', [id_post]);
             await db.close();
             
+<<<<<<< HEAD
             const likes = post[0].likes.trim() || ' ';
+=======
+            const likes = post[0].likes.trim();
+>>>>>>> 4ebd161dfd6ad550b4a0173475c73c493d4daadc
             const likesFinal = likes.split(' ');
 
             for (let i = 0; i < likesFinal.length; i++) {

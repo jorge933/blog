@@ -12,7 +12,35 @@
 
         <section class="posts">
             <% if (!noposts) { %>
+<<<<<<< HEAD
                 <%- include('inc/postsContainer') %>
+=======
+                <% Posts.forEach(post => { %>
+                    <div class="post-container search">
+                        <a href="/post/<%= post.id %>">
+                            <div class="header-post">
+                                <img src="<%= post.author_photo %>" alt="Imagem de perfil do criador" width="50">
+                                <span class="name">
+                                    <%= post.author_name %>
+                                </span>
+                            </div>
+            
+                            <div class="main-post">
+                                <h2 class="title-post">
+                                    <%= post.title %>
+                                </h2>
+                                <p class="content-post">
+                                    <%= post.content %>
+                                </p>
+                            </div>
+            
+                            <div class="footer-post"> <span class="lang <%= post.lang.toLowerCase().replace(' ', '-') %>">
+                                    <%= post.lang %>
+                                </span> </div>
+                        </a>
+                    </div>
+                <% }) %>
+>>>>>>> 4ebd161dfd6ad550b4a0173475c73c493d4daadc
             <% } else {%>
                 <p class="noPosts"><%= isLogged === true && User[0].username === name ? 'Você ainda não postou nada.' : `${User[0].username} ainda não postou nada.` %></p> 
             <% } %>
