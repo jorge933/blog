@@ -57,7 +57,6 @@ Depois disso acesse http://localhost:5000/
 ## Features a serem adicionas
 
 - Responsividade
-- Perfil
 
 ## Feedback
 
@@ -70,5 +69,3 @@ Caso você tenha algum elogio ou critica, envie no meu instagram: @jorgin_p ou n
  - [Vídeo 3](https://youtu.be/360AvdGDVHE)
 
 **Dependendo do tamanho do seu monitor o projeto pode não funcionar corretamente, ja que não esta responsivo e o foco do projeto não era CSS.**
-
-**Algumas funções podem não estar disponiveis, devido a estar em desenvolvimento**
