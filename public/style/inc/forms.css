@@ -1,4 +1,5 @@
-form textarea, section.modal form input[type="text"], div.modal.active form input[type="text"] {
+form textarea, section.modal form input[type="text"], div.modal.active form input[type="text"],
+main section.main div.edit-name form input[type="text"] {
  font: 1.5rem "Poppins_med";
  margin-top: 2rem;
  resize: none;
@@ -16,7 +17,8 @@ section.modal form input[type="text"], form textarea {
  font-family: "Poppins_med";
 }
 
-form input[type="submit"],  section.modal form div.buttons button, div.modal.active button.cancel {
+form input[type="submit"],  section.modal form div.buttons button, div.modal.active button.cancel,
+main section.main div.edit-name button.cancel  {
  width: 100%;
  padding: .3rem 0;
  background-color: #202020;

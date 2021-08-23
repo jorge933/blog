@@ -16,7 +16,7 @@ async function search(where, user) {
     }
     await db.close();
 
-    if (query.length > 0) {
+    if (query.length >= 1) {
         return query;
     } else {
         const noUsers = true;

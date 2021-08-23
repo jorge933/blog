@@ -12,9 +12,6 @@ module.exports = {
             
 
             const likes = post[0].likes.trim() || ' ';
-
-            const likes = post[0].likes.trim();
-
             const likesFinal = likes.split(' ');
 
             for (let i = 0; i < likesFinal.length; i++) {

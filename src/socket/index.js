@@ -18,6 +18,15 @@ module.exports = {
             confirmWriter(socket);
             deletePost(socket);
             ManageInteractions(socket);
+            const Database = require('../config/config')
+
+            socket.on('new_name', async data => {
+                const db = await Database();
+
+                const ExistUser = await db.all('SELECT * FROM users WHERE username = ?', [data]);
+
+                ExistUser.length === 0 ? socket.emit('user_exist', 1) : socket.emit('user_exist', 2)
+            })
         });
     }
 }

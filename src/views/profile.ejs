@@ -3,10 +3,25 @@
     <main>
         <section class="main">
             <div class="image-profile"> <img src="<%= User[0].photo %>" alt="" width="150"> </div>
-            <div class="infos">
-                <span class="name"><%= User[0].username %></span>
+            <div class="infos active">
+                <span class="name">
+                    <%= User[0].username %>
+                        <% if (isLogged === true && name === User[0].username) { %>
+                            <button class="edit-button"><i class="fas fa-pen"></i></button>
+                        <% } %>
+                </span>
                 <span class="posts">Posts: <%= PostLength %></span>
             </div>
+            <% if (isLogged === true && User[0].username === name) { %>
+                <div class="edit-name">
+                    <form action="/edit-name" method="POST">
+                        <input type="text" value="<%= name %>" placeholder="Seu novo nome" name="new_name" autofocus minlength="5" maxlength="20">
+                        <input type="hidden" value="<%= name %>" name="old_name" readonly>
+                        <input type="submit" value="Editar">
+                        <button class="cancel" type="button">Cancelar</button>
+                    </form>
+                </div>
+            <% } %>
         </section>
 
 
@@ -14,37 +29,57 @@
             <% if (!noposts) { %>
 
                 <%- include('inc/postsContainer') %>
-=======
-                <% Posts.forEach(post => { %>
-                    <div class="post-container search">
-                        <a href="/post/<%= post.id %>">
-                            <div class="header-post">
-                                <img src="<%= post.author_photo %>" alt="Imagem de perfil do criador" width="50">
-                                <span class="name">
-                                    <%= post.author_name %>
-                                </span>
-                            </div>
-            
-                            <div class="main-post">
-                                <h2 class="title-post">
-                                    <%= post.title %>
-                                </h2>
-                                <p class="content-post">
-                                    <%= post.content %>
-                                </p>
-                            </div>
-            
-                            <div class="footer-post"> <span class="lang <%= post.lang.toLowerCase().replace(' ', '-') %>">
-                                    <%= post.lang %>
-                                </span> </div>
-                        </a>
-                    </div>
-                <% }) %>
 
-            <% } else {%>
-                <p class="noPosts"><%= isLogged === true && User[0].username === name ? 'Você ainda não postou nada.' : `${User[0].username} ainda não postou nada.` %></p> 
-            <% } %>
+                    <% } else {%>
+                        <p class="noPosts">
+                            <%= isLogged===true && User[0].username===name ? 'Você ainda não postou nada.' :
+                                `${User[0].username} ainda não postou nada.` %>
+                        </p>
+                        <% } %>
         </section>
     </main>
 
-<%- include('inc/footer') %>
+    <% if (isLogged === true && User[0].username === name) { %>
+        <script>
+            const socket = io();
+            const button = document.querySelector('main section.main div.infos span button.edit-button');
+            const button_cancel = document.querySelector('main section.main div.edit-name button.cancel');
+    
+            const div_edit = document.querySelector('main section.main div.edit-name');
+            const container_infos = document.querySelector('main section.main div.infos');
+            
+            button.addEventListener('click', () => {
+                container_infos.classList.remove('active');
+                div_edit.classList.add('active');
+                
+                const input = document.querySelector('main section.main div.edit-name.active input[type="text"]');
+                
+                input.addEventListener('input', async () => {
+                    await socket.emit('new_name', input.value);
+
+                    
+                })
+            })
+            
+            socket.on('user_exist', data => {
+                const button_submit = document.querySelector('main section.main div.edit-name.active input[type="submit"]');
+                const input = document.querySelector('main section.main div.edit-name.active input[type="text"]');
+                
+                if (data === 1) {
+                    input.classList.remove('red')
+                    input.classList.add('green')
+                    button_submit.classList.add('active');
+                } else {
+                    input.classList.remove('green')
+                    input.classList.add('red')
+                    button_submit.classList.remove('active');
+                }
+            })
+            button_cancel.addEventListener('click', () => {
+                container_infos.classList.add('active');
+                div_edit.classList.remove('active');
+            })
+        </script>
+    <% } %>
+
+    <%- include('inc/footer') %>

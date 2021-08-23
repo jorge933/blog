@@ -23,9 +23,6 @@ const DeleteAccount = require('./controllers/auth/deleteAccount');
 const ProfilesController = require('./controllers/GET/Profile/ProfilesController');
 const PostsUser = require('./controllers/GET/Profile/PostsUser');
 
-const ProfilesController = require('./controllers/GET/PagesController/ProfilesController')
-
-
 app.get('/', InitializeController.index);
 
 app.get('/a', NewUser.index);
@@ -64,10 +61,12 @@ app.get('/delete-account', DeleteAccount.index);
 const CreatePostController = require('./controllers/POST/CreatePostController');
 const WriterController = require('./controllers/POST/WriterController');
 const EditPostController = require('./controllers/POST/EditPostController');
+const EditNameController = require('./controllers/POST/EditNameController')
 
 app.post('/create-post', CreatePostController.index);
 app.post('/ser-um-escritor', WriterController.index);
 app.post('/edit-post', EditPostController.index);
+app.post('/edit-name', EditNameController.index)
 
 // auth =================================================================================================
 

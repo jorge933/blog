@@ -1,3 +1,5 @@
+@import url(./inc/forms.css);
+
 main {
  height: 75vh;
 }
@@ -15,16 +17,53 @@ main section.main div.image-profile img {
  border-radius: 50%;
 }
 
-main section.main div.infos {
+main section.main div.infos, main section.main div.edit-name {
+ display: none;
+}
+
+main section.main div.edit-name button.cancel {
+ width: 80%;
+ margin: 1rem 0;
+}
+
+main section.main div.infos.active, main section.main div.edit-name.active {
  margin-top: 3rem;
  display: flex;
  flex-direction: column;
  text-align: center;
 }
 
+main section.main div.edit-name.active input[type="text"] {
+ margin: 0;
+ padding: 2px 1rem;
+}
+
+main section.main div.edit-name.active input[type="text"].green {border-color: rgb(9, 240, 9)}
+
+main section.main div.edit-name.active input[type="text"].red {border-color: rgb(235, 11, 11)}
+
+main section.main div.edit-name.active input[type="submit"] {
+ width: 25rem;
+ display: block;
+ margin: 1rem 0 0;
+ height: 0;
+ padding: 0;
+}
+
+main section.main div.edit-name.active input[type="submit"].active {
+ height: 3rem;
+ padding: .3rem 0;
+}
+
 main section.main div.infos span {
  font: 1.5rem "Fira_bold";
  line-height: 2rem;
+}
+
+main section.main div.infos span button {
+ background: none;
+ border: none;
+ cursor: pointer;
 }
 
 main section.posts {
